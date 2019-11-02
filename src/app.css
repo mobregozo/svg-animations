@@ -1,0 +1,316 @@
+/* CIRCLE */
+#icon:hover .circle {
+  animation: circle-animation 0.5s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.9);
+  transform-origin: center;
+}
+
+@keyframes circle-animation {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#icon:hover .check {
+  animation: stroke-animation 1s ease-out forwards;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  stroke: #cfd8dc;
+  transform-origin: center;
+}
+
+@keyframes stroke-animation {
+  40% {
+    transform: scale(1);
+  }
+  55% {
+    stroke: #cfd8dc;
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    transform: scale(1);
+    stroke: #21b587;
+  }
+}
+
+/* GUITAR PLAYER */
+
+.acid{
+	animation: acid 2s infinite;
+}	
+@keyframes acid{
+	to{
+		filter: hue-rotate(360deg);
+	}
+}
+
+
+#guitar {
+  visibility: hidden;
+}
+.visible #guitar {
+  visibility: visible;
+}
+
+
+.guitar {
+	/* Start the shake animation and make the animation last for 0.5 seconds */
+	animation: shake 0.5s;
+  
+	/* When the animation is finished, start again */
+	animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	10% { transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { transform: translate(-3px, 0px) rotate(1deg); }
+	30% { transform: translate(3px, 2px) rotate(0deg); }
+	40% { transform: translate(1px, -1px) rotate(1deg); }
+	50% { transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { transform: translate(-3px, 1px) rotate(0deg); }
+	70% { transform: translate(3px, 1px) rotate(-1deg); }
+	80% { transform: translate(-1px, -1px) rotate(1deg); }
+	90% { transform: translate(1px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+
+#guitar .feet_l {
+  animation: rotate_feet 0.6s infinite linear;
+  transform-origin: 959px 903px;
+}
+
+@keyframes rotate_feet {
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.arm_r {
+  animation: rotate_arm_r 1s infinite linear;
+  transform-origin: 860px 344px;
+  animation-direction: alternate;
+}
+
+.arm_l {
+  animation: rotate_arm_l 1s infinite linear;
+  transform-origin: 951px 378px;
+  animation-direction: alternate;
+}
+
+@keyframes rotate_arm_l {
+  50% {
+    transform: rotate(-21deg);
+  }
+  75% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes rotate_arm_r {
+  50% {
+    transform: rotate(-11deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.hand_l {
+  animation: hand_move 1s infinite linear;
+  animation-direction: alternate;
+}
+
+.hand_r .finger {
+  animation: handresize 0.2s infinite linear;
+  transform-origin: 825px 540px;
+  animation-direction: alternate;
+}
+
+@keyframes handresize {
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes hand_move {
+  50% {
+    transform: translate(37px, -21px);
+  }
+  75% {
+    transform: translate(-49px, 42px);
+  }
+}
+
+.string {
+  animation: string 1s infinite linear alternate;
+}
+
+@keyframes string {
+  100% {
+    stroke: #353535;
+  }
+}
+
+.notes .a {
+  animation: music 0.7s ease-in-out both infinite;
+  transform-origin: 1040px 293px;
+}
+.notes .b {
+  animation: music 0.8s ease-in-out both infinite;
+  transform-origin: 1040px 293px;
+}
+.notes .c {
+  animation: music 0.9s ease-in-out both infinite;
+  transform-origin: 1040px 293px;
+}
+
+@keyframes music {
+  0%,
+  100% {
+    transform: scale(1) translate3d(0, -10px, 0);
+  }
+  50% {
+    transform: scale(1, 2) translate3d(0, 10px, 0);
+  }
+}
+
+.face,
+.hair {
+  animation: shaking 0.3s linear alternate infinite;
+}
+
+.hair {
+  animation: hair 0.1s linear alternate infinite; 
+  transform-origin: 785px 123px;
+}
+
+@keyframes shaking {
+  0% {
+    transform: translate(0, -2px);
+  }
+  100% {
+    transform: translate(0, 3px);
+  }
+}
+
+@keyframes hair {
+  100% {
+	transform: scale(1.02);
+	transform: rotate(1deg);
+  }
+}
+
+/* Rock mode */
+.rock #guitar .feet_l {
+  animation: rotate_feet 0.3s infinite linear;
+}
+
+.rock .arm_r {
+  animation: rotate_arm_r 0.5s infinite linear;
+  animation-direction: alternate;
+}
+
+.rock .arm_l {
+  animation: rotate_arm_l 0.5s infinite linear;
+  animation-direction: alternate;
+}
+
+.rock .hand_l {
+  animation: hand_move 0.5s infinite linear;
+  animation-direction: alternate;
+}
+
+.rock .notes .a {
+  animation: music 0.35s ease-in-out both infinite;
+}
+.rock .notes .b {
+  animation: music 0.4s ease-in-out both infinite;
+}
+.rock .notes .c {
+  animation: music 0.45s ease-in-out both infinite;
+}
+
+.rock .face,
+.rock .hair {
+  animation: shaking 0.15s linear alternate infinite;
+}
+
+/* MODES */
+
+.bold .hair {
+  visibility: hidden;
+}
+
+
+/* JUMP */
+
+.jump .leg_l{
+	animation: jump_left_leg 0.7s linear;
+    transform-origin: 919px 584px;
+}
+
+@keyframes jump_left_leg {
+	0%,100% {
+		transform: rotate(0);
+	}
+	50% {
+		transform: rotate(-80deg);
+	}
+  }
+
+.jump .leg_r{
+	animation: jump_right_leg 0.7s linear;
+    transform-origin: 818px 583px;
+}
+
+@keyframes jump_right_leg {
+	0%,100% {
+		transform: rotate(0);
+	}
+	50% {
+		transform: rotate(80deg);
+	}
+  }
+
+
+.jump #guitar {
+	animation-name: bounce-7;
+	animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	transform-origin: bottom;
+  }
+@keyframes bounce-7 {
+	0% {
+	  transform: scale(1, 1) translateY(0);
+	}
+	10% {
+	  transform: scale(1.1, 0.9) translateY(0);
+	}
+	30% {
+	  transform: scale(0.9, 1.1) translateY(-100px);
+	}
+	50% {
+	  transform: scale(1.05, 0.95) translateY(0);
+	}
+	57% {
+	  transform: scale(1, 1) translateY(-7px);
+	}
+	64% {
+	  transform: scale(1, 1) translateY(0);
+	}
+	100% {
+	  transform: scale(1, 1) translateY(0);
+	}
+  }
