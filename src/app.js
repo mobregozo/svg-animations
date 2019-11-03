@@ -12,11 +12,6 @@ window.onload = () => {
     setupClasses('bold');
   });
 
-  const visible = document.getElementById("visible");
-  visible.addEventListener("click", () => {
-    setupClasses('visible');
-  });
-
   const rock = document.getElementById("rock");
   rock.addEventListener("click", () => {
     setupClasses('rock');
