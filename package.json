@@ -1,0 +1,19 @@
+{
+  "name": "svg-animations",
+  "homepage": "http://mobregozo.github.io/svg-animations/src/index.html",
+  "version": "1.0.0",
+  "description": "This is a Simple Project that I did with Learning purposes, oriented to SVG animations with CSS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobregozo/svg-animations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mobregozo/svg-animations/issues"
+  }
+}
